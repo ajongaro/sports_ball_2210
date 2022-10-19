@@ -37,4 +37,5 @@ RSpec.describe Player do
 
     expect(player.total_cost).to eq(36000000)
   end
+
 end
