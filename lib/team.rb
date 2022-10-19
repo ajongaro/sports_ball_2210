@@ -1,3 +1,6 @@
+require 'active_support'
+require 'active_support/core_ext/numeric/conversions'
+
 class Team
   attr_reader :roster
 
@@ -36,5 +39,9 @@ class Team
     player_details["total_value"] = total_value
     player_details["player_count"] = player_count
     player_details
+  end
+
+  def average_cost_of_player
+    "$" + (details["total_value"] / details["player_count"]).to_s(:delimited)
   end
 end
