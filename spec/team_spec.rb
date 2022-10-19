@@ -16,5 +16,9 @@ RSpec.describe Team do
     end
   end
 
-
+  describe '#player_count' do
+    it 'counts the players on team' do
+      expect(team.player_count).to eq(0)
+    end
+  end
 end
