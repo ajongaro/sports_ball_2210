@@ -18,4 +18,8 @@ class Team
   def long_term_players
     @roster.select { |player| player.contract_length > 24 }
   end
+
+  def short_term_players
+    @roster.select { |player| player.contract_length <= 24 }
+  end
 end
