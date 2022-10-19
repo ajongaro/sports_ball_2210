@@ -22,4 +22,12 @@ class Team
   def short_term_players
     @roster.select { |player| player.contract_length <= 24 }
   end
+
+  def total_value
+    total = 0
+    roster.each do |player|
+      total += (player.monthly_cost * player.contract_length)
+    end
+    total
+  end
 end
