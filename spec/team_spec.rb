@@ -99,4 +99,15 @@ RSpec.describe Team do
       expect(team.average_cost_of_player).to eq("$21,300,000")
     end
   end    
+
+  describe '#players_by_last_name' do
+    it 'returns roster of players last names as string' do
+      team.add_player(player_1)
+      team.add_player(player_2)
+      team.add_player(player_3)
+      team.add_player(player_4)
+      
+      expect(team.players_by_last_name).to eq("DeNunez, McClennan, Palledorous, Porter")
+    end
+  end
 end
