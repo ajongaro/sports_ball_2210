@@ -32,7 +32,6 @@ RSpec.describe Team do
 
       expect(team.player_count).to eq(2)
     end
-    
   end
 
   describe '#add_player' do
@@ -46,7 +45,7 @@ RSpec.describe Team do
     end
   end
 
-  describe '#long_term_players'
+  describe '#long_term_players' do
     it 'returns players with contract greater than 24 months' do
       team.add_player(player_1)
       team.add_player(player_2)
@@ -55,4 +54,16 @@ RSpec.describe Team do
 
       expect(team.long_term_players).to eq([player_1, player_3])
     end
+  end
+
+  describe '#shorter_term_players' do
+    it 'returns players with contract equal to or shorter than 24 months' do
+      team.add_player(player_1)
+      team.add_player(player_2)
+      team.add_player(player_3)
+      team.add_player(player_4)
+      
+      expect(team.short_term_players).to eq([player_2, player_4])
+    end
+  end
 end
