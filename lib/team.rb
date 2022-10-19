@@ -14,4 +14,8 @@ class Team
   def add_player(player)
     @roster << player
   end
+
+  def long_term_players
+    @roster.select { |player| player.contract_length > 24 }
+  end
 end
