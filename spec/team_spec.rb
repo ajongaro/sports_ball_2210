@@ -2,9 +2,13 @@ require './lib/player'
 require './lib/team'
 
 RSpec.describe Team do
+  # players
   let(:player_1) { Player.new("Michael Pallendorous", 1000000, 36) }
-  let(:player_2) { Player.new("Kenny DeNunez", 500000, 24)}
-  let(:team) { Team.new("Dodgers", "Los Angeles")}
+  let(:player_2) { Player.new("Kenny DeNunez", 500000, 24) }
+  let(:player_3) { Player.new("Alan McClennan", 750000, 48) }
+  let(:player_4) { Player.new("Hamilton Porter", 100000, 12) }
+  # team
+  let(:team) { Team.new("Dodgers", "Los Angeles") }
 
   describe '#initialize' do
     it 'exists' do
