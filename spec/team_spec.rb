@@ -21,4 +21,15 @@ RSpec.describe Team do
       expect(team.player_count).to eq(0)
     end
   end
+
+  describe '#add_player' do
+    it 'adds a player to the roster array' do
+      team.add_player(player_1)
+      
+      expect(team.roster.first).to eq(player_1)
+
+      team.add_player(player_2)
+      expect(team.roster[1]).to eq(player_2)
+    end
+  end
 end
