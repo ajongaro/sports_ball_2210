@@ -3,7 +3,7 @@ require './lib/team'
 
 RSpec.describe Team do
   # players
-  let(:player_1) { Player.new("Michael Pallendorous", 1_000_000, 36) }
+  let(:player_1) { Player.new("Michael Palledorous", 1_000_000, 36) }
   let(:player_2) { Player.new("Kenny DeNunez", 500_000, 24) }
   let(:player_3) { Player.new("Alan McClennan", 750_000, 48) }
   let(:player_4) { Player.new("Hamilton Porter", 100_000, 12) }

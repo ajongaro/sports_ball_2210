@@ -44,4 +44,12 @@ class Team
   def average_cost_of_player
     "$" + (details["total_value"] / details["player_count"]).to_s(:delimited)
   end
+
+  def players_by_last_name
+    player_list = []
+    roster.each do |player|
+      player_list << player.last_name 
+    end
+    player_list.sort.join(", ")
+  end
 end
