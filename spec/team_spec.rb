@@ -66,4 +66,15 @@ RSpec.describe Team do
       expect(team.short_term_players).to eq([player_2, player_4])
     end
   end
+
+  describe '#total_value' do
+    it 'returns sum of monthly cost times contract length for team' do
+      team.add_player(player_1)
+      team.add_player(player_2)
+      team.add_player(player_3)
+      team.add_player(player_4)
+
+      expect(team.total_value).to eq(96_000_000)
+    end
+  end
 end
