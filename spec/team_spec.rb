@@ -3,10 +3,10 @@ require './lib/team'
 
 RSpec.describe Team do
   # players
-  let(:player_1) { Player.new("Michael Pallendorous", 1000000, 36) }
-  let(:player_2) { Player.new("Kenny DeNunez", 500000, 24) }
-  let(:player_3) { Player.new("Alan McClennan", 750000, 48) }
-  let(:player_4) { Player.new("Hamilton Porter", 100000, 12) }
+  let(:player_1) { Player.new("Michael Pallendorous", 1_000_000, 36) }
+  let(:player_2) { Player.new("Kenny DeNunez", 500_000, 24) }
+  let(:player_3) { Player.new("Alan McClennan", 750_000, 48) }
+  let(:player_4) { Player.new("Hamilton Porter", 100_000, 12) }
   # team
   let(:team) { Team.new("Dodgers", "Los Angeles") }
 
@@ -75,6 +75,17 @@ RSpec.describe Team do
       team.add_player(player_4)
 
       expect(team.total_value).to eq(85_200_000)
+    end
+  end
+
+  describe '#details' do
+    it 'returns team details as hash' do
+      team.add_player(player_1)
+      team.add_player(player_2)
+      team.add_player(player_3)
+      team.add_player(player_4)
+
+      expect(team.details).to eq({"total_value" => 85_200_000, "player_count" => 4})
     end
   end
 end
