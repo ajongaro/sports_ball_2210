@@ -30,4 +30,11 @@ class Team
     end
     total
   end
+
+  def details
+    player_details = {}
+    player_details["total_value"] = total_value
+    player_details["player_count"] = player_count
+    player_details
+  end
 end
