@@ -20,6 +20,15 @@ RSpec.describe Team do
     it 'counts the players on team' do
       expect(team.player_count).to eq(0)
     end
+
+    # integration test with add_player
+    it 'counts players after players are added' do
+      team.add_player(player_1)
+      team.add_player(player_2)
+
+      expect(team.player_count).to eq(2)
+    end
+    
   end
 
   describe '#add_player' do
