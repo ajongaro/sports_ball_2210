@@ -10,6 +10,11 @@ RSpec.describe Team do
     it 'exists' do
       expect(team).to be_a(Team)
     end
+    
+    it 'starts with empty roster' do
+      expect(team.roster).to eq([])
+    end
   end
+
 
 end
